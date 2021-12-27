@@ -1,0 +1,43 @@
+{
+  "name": "waitwait",
+  "version": "0.1.0",
+  "description": "Golang's `WaitGroup` and Unix's `sleep` for Javascript (browser and Node.js).",
+  "keywords": [
+    "async",
+    "sync",
+    "promise",
+    "waitgroup",
+    "go",
+    "sleep"
+  ],
+  "homepage": "https://github.com/Nicolab/waitwait",
+  "author": {
+    "name": "Nicolas Tallefourtane",
+    "url": "https://nicolab.net"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Nicolab/waitwait.git"
+  },
+  "bugs": "https://github.com/Nicolab/waitwait/issues",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "rimraf": "^3.0.2",
+    "vite": "^2.7.7"
+  },
+  "main": "./dist/waitwait.umd.js",
+  "module": "./dist/waitwait.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/waitwait.es.js",
+      "require": "./dist/waitwait.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "rimraf dist && vite build",
+    "test": "./test/run.sh",
+    "git-dist": "git add dist && git commit dist -m \"[dist] v$npm_package_version\"",
+    "deploy": "yarn build && yarn git-dist && git push -u origin master && npm publish"
+  }
+}

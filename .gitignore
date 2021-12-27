@@ -1,0 +1,14 @@
+*.log
+
+node_modules/
+local/
+.local/
+public/
+.Trash-1000/
+.DS_Store
+Thumbs.db
+.idea/
+.tmp/
+.cache/
+package-lock.json
+yarn.lock
