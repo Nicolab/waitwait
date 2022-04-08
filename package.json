@@ -1,14 +1,15 @@
 {
   "name": "waitwait",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Golang's `WaitGroup` and Unix's `sleep` for Javascript (browser and Node.js).",
   "keywords": [
     "async",
     "sync",
-    "promise",
     "waitgroup",
+    "sleep",
+    "promise",
     "go",
-    "sleep"
+    "wg"
   ],
   "homepage": "https://github.com/Nicolab/waitwait",
   "author": {
@@ -22,17 +23,16 @@
   },
   "bugs": "https://github.com/Nicolab/waitwait/issues",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-commonjs": "^21.0.3",
     "rimraf": "^3.0.2",
-    "vite": "^2.7.7"
+    "vite": "^2.9.1"
   },
-  "type": "module",
-  "main": "./src/index.js",
+  "main": "./dist/waitwait.cjs.js",
   "module": "./dist/waitwait.es.js",
   "exports": {
     ".": {
       "import": "./dist/waitwait.es.js",
-      "require": "./dist/waitwait.umd.js"
+      "require": "./dist/waitwait.cjs.js"
     }
   },
   "scripts": {
