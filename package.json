@@ -1,6 +1,6 @@
 {
   "name": "waitwait",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Golang's `WaitGroup` and Unix's `sleep` for Javascript (browser and Node.js).",
   "keywords": [
     "async",
@@ -36,7 +36,8 @@
     }
   },
   "scripts": {
-    "build": "rimraf dist && vite build",
+    "build-ts-def": "cp ./src/index.d.ts ./dist/waitwait.es.d.ts && cp ./src/index.d.ts ./dist/waitwait.cjs.d.ts",
+    "build": "rimraf dist && vite build && yarn build-ts-def",
     "test": "./test/run.sh",
     "git-dist": "git add dist && git commit dist -m \"[dist] v$npm_package_version\"",
     "deploy": "yarn build && yarn git-dist && git push -u origin master && npm publish"
