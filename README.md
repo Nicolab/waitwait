@@ -18,6 +18,14 @@ or with Yarn:
 yarn add waitwait
 ```
 
+or with pnpm:
+
+```sh
+pnpm add waitwait
+```
+
+or your favorite package manager...
+
 ## Usage
 
 ### Sleep
@@ -25,7 +33,7 @@ yarn add waitwait
 sleep (wait) 1 seconde:
 
 ```js
-import {sleep} from 'waitwait';
+import { sleep } from 'waitwait';
 
 console.log('Start');
 
@@ -39,7 +47,7 @@ console.log('End');
 Waits until the routine is done:
 
 ```js
-import {WaitGroup} from 'waitwait';
+import { WaitGroup } from 'waitwait';
 
 const wg = new WaitGroup();
 
@@ -61,7 +69,7 @@ console.log('End');
 Waits until all routines are done:
 
 ```js
-import {WaitGroup} from 'waitwait';
+import { WaitGroup } from 'waitwait';
 
 const wg = new WaitGroup();
 
@@ -87,7 +95,7 @@ console.log('End');
 Waits forever:
 
 ```js
-import {WaitGroup} from 'waitwait';
+import { WaitGroup } from 'waitwait';
 
 const wg = new WaitGroup();
 
@@ -107,7 +115,7 @@ console.log('End');
 Cancel a `WaitGroup`:
 
 ```js
-import {WaitGroup} from 'waitwait';
+import { WaitGroup } from 'waitwait';
 
 const wg = new WaitGroup();
 
