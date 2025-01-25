@@ -42,6 +42,6 @@
     "build": "rimraf dist && vite build && pnpm build-ts-def",
     "test": "./test/run.sh",
     "git-dist": "git add dist && git commit dist -m \"[dist] v$npm_package_version\"",
-    "deploy": "pnpm build && pnpm git-dist && git push -u origin master && npm publish"
+    "deploy": "pnpm run build && pnpm git-dist && git push -u origin master && npm publish"
   }
 }
