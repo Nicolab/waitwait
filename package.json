@@ -1,6 +1,6 @@
 {
   "name": "waitwait",
-  "version": "0.3.0",
+  "version": "0.0.4",
   "description": "Golang's `WaitGroup` and Unix's `sleep` for Javascript (browser and Node.js).",
   "keywords": [
     "async",
@@ -13,8 +13,8 @@
   ],
   "homepage": "https://github.com/Nicolab/waitwait",
   "author": {
-    "name": "Nicolas Tallefourtane",
-    "url": "https://nicolab.net"
+    "name": "Nicolas Talle",
+    "url": "https://ntalle.com"
   },
   "license": "MIT",
   "repository": {
@@ -23,11 +23,12 @@
   },
   "bugs": "https://github.com/Nicolab/waitwait/issues",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^23.0.0",
-    "rimraf": "^3.0.2",
-    "vite": "^3.1.17"
+    "@rollup/plugin-commonjs": "^28.0.2",
+    "rimraf": "^6.0.1",
+    "vite": "^6.0.11"
   },
   "type": "module",
+  "types": "./dist/waitwait.d.ts",
   "main": "./dist/waitwait.cjs",
   "module": "./dist/waitwait.js",
   "exports": {
@@ -37,10 +38,10 @@
     }
   },
   "scripts": {
-    "build-ts-def": "cp ./src/index.d.ts ./dist/waitwait.d.ts",
-    "build": "rimraf dist && vite build && yarn build-ts-def",
+    "build-ts-def": "cp ./src/waitwait.d.ts ./dist/waitwait.d.ts",
+    "build": "rimraf dist && vite build && pnpm build-ts-def",
     "test": "./test/run.sh",
     "git-dist": "git add dist && git commit dist -m \"[dist] v$npm_package_version\"",
-    "deploy": "yarn build && yarn git-dist && git push -u origin master && npm publish"
+    "deploy": "pnpm build && pnpm git-dist && git push -u origin master && npm publish"
   }
 }
